@@ -2,7 +2,7 @@ create table branch  (
 	bid int(5) primary key,
 	bname varchar(10) not null,
 	location varchar(30) 
-)
+);
 
 create table account(
 	accid int(10) Primary key,
@@ -10,7 +10,7 @@ create table account(
 	openingDate date,
 	FOREIGN KEY (bid) REFERENCES branch(bid),
 	status varchar(1) 
-)
+);
 
 
 
@@ -23,4 +23,21 @@ create table customer (
 	mobNo int(10),
 	DOB DATE,
 	FOREIGN KEY (bid) REFERENCES branch(bid)
-)
+);
+
+create table loan (
+	LID int(10) Primary Key,
+	accid
+	FOREIGN KEY (accid) REFERENCES account(accid),
+	loanAmount int(10),
+	loanType varchar(10),
+	loanDate date
+);
+
+create table transactions(
+	tid int(10) primary key
+	FOREIGN KEY (accid) REFERENCES account(accid),
+	trType varchar(10),
+	amount int(10),
+	trDate date
+);

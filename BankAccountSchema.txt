@@ -6,10 +6,9 @@ create table branch  (
 
 create table account(
 	accid int(10) Primary key,
-	cid FK 
 	accType varchar(10),
 	openingDate date,
-	FOREIGN KEY (bid) REFERENCES branch(bid)
+	FOREIGN KEY (bid) REFERENCES branch(bid),
 	status varchar(1) 
 )
 

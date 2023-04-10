@@ -1,0 +1,16 @@
+
+Branch (bid, bname, location)
+
+transaction (tid, accid, type, amount, date)
+
+account (accid, cid, accType, openingDate, type, status)
+
+loan (cid, bid, loanAmount, date)
+
+customer (cid, name, location, accid, mobNo, DOB)
+
+admin (adminId, firstName, lastName, branch)
+
+AccountOpenForm (AOpenid, cid,date, adharno, panno ,status, accid)
+
+AccountCloseForm (ACloseId, accid)

@@ -2,6 +2,7 @@ package com.example.adminservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.adminservice.dao.AccountDoa;
 import com.example.adminservice.models.Account_master;
@@ -10,19 +11,19 @@ import com.example.adminservice.models.Account_master;
 public class AccountServiceImpl implements AccountService {
 	
 	@Autowired
-	AccountDoa accDao;
+	AccountDoa accountDao;
 
 	@Override
 	public Account_master openAccount(Account_master acc) {
-		// TODO Auto-generated method stub
-		
-		return accDao.save(acc);
+	
+		return accountDao.save(acc);
 	}
 
 	@Override
-	public Account_master deleteAccount(String accid) {
+	public String deleteAccount(String account_number) {
 		// TODO Auto-generated method stub
-		return null;
+		accountDao.deleteById(account_number);
+		return "Object deleted..";
 	}
 
 	@Override

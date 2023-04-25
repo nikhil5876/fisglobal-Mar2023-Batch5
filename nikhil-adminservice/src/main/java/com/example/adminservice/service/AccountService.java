@@ -8,7 +8,7 @@ import com.example.adminservice.models.Account_master;
 public interface AccountService {
 	
 	public Account_master openAccount(Account_master acc);
-	public Account_master deleteAccount(String accid);
+	public String deleteAccount(String accid);
 	public Account_master allAccount();
 	
 	
